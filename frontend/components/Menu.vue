@@ -1,16 +1,13 @@
 <template>
-  <section class="section">
-    <aside class="menu">
-      <p class="menu-label">
-        General
-      </p>
-      <ul class="menu-list">
-        <li v-for="(link,index) in links" :key="index" >
-          <a :href="link.link" :class="{'is-active':routeActive(link.link)}">{{link.title}}</a>
-        </li>
-      </ul>
-    </aside>
-  </section>
+    <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item" v-for="(link,index) in links" :key="index" :href="link.link" :class="{'is-active':routeActive(link.link)}">
+            {{link.title}}
+          </a>
+        </div>
+      </div>
+    </nav>
 </template>
 
 <script>
@@ -18,13 +15,10 @@
     name: "Menu",
     data() {
       return {
-        links: [{title: 'Posts', link: '/posts'},{title: 'Index', link: '/'},]
+        links: [{title: 'Posts', link: '/posts'}, {title: 'Index', link: '/'},]
       }
     },
-    computed: {
-
-
-    },
+    computed: {},
     methods: {
       routeActive(link) {
         return link === this.$route.fullPath;

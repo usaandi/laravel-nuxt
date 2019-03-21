@@ -1,12 +1,16 @@
 <template>
   <article class="media">
+    <div class="media-left">
+      <img :src="'https://picsum.photos/100?blur&random&id='+post.id" width="100" height="100">
+    </div>
     <div class="media-content">
       <div class="content">
-        <p>
+        <div>
           <strong class="card-title">{{post.title}}</strong>
-          <br>
-          {{post.content}}
-        </p>
+        </div>
+          <p class="card-body">
+            {{post.content}}
+          </p>
       </div>
       <nav class="level is-mobile">
         <div class="level-left">

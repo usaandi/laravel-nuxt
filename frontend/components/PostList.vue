@@ -1,6 +1,6 @@
 <template>
-  <div class="container">
-    <Post v-for="(post,index) in posts" :post="post"></Post>
+  <div class="container add-margin-t52 card py-3">
+    <Post v-for="(post,index) in posts" :post="post" :key="index"></Post>
   </div>
 </template>
 
@@ -18,7 +18,6 @@
 
     created() {
       this.$axios.$get('posts').then(response => {
-        console.log(response);
         this.posts=response.data;
       })
     }
