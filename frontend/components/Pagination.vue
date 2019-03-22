@@ -2,8 +2,8 @@
   <div>
     <slot></slot>
     <nav class="pagination is-centered" role="navigation" aria-label="pagination">
-      <a class="pagination-previous" :disabled="isStartOfPage" @click="loadPreviousPage">Previous</a>
-      <a class="pagination-next" :disabled="isEndOfPage" @click="loadNextPage">Next page</a>
+      <button class="pagination-previous" :disabled="isStartOfPage" @click="loadPreviousPage">Previous</button>
+      <button class="pagination-next" :disabled="isEndOfPage" @click="loadNextPage">Next page</button>
       <ul class="pagination-list">
         <pagination-link
           v-for="page in pageArray" :page="page"
@@ -31,10 +31,14 @@
     },
     methods: {
       loadNextPage() {
-        this.$store.dispatch('loadPostPage', this.pagination.current_page + 1);
+        if (this.pagination.current_page !== this.pagination.last_page) {
+          this.$emit('paging', this.pagination.current_page + 1);
+        }
       },
       loadPreviousPage() {
-        this.$store.dispatch('loadPostPage', this.pagination.current_page - 1);
+        if(this.pagination.current_page > 1){
+          this.$emit('paging', this.pagination.current_page - 1);
+        }
       }
     },
     computed: {
@@ -78,5 +82,10 @@
 </script>
 
 <style scoped>
-
+ nav > button{
+   background-color: whitesmoke;
+ }
+ nav > button:hover{
+   background-color: white;
+ }
 </style>

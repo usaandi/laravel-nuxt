@@ -1,7 +1,7 @@
 <template>
   <div class="container mt-4">
     <pagination :pagination="$store.state.pagination" @paging="loadPage" :delta="1">
-      <list-table :objects="$store.state.list" :keys="tableKeys"></list-table>
+      <list-table :objects="$store.state.list" :keys="tableKeys" :actions="actions"></list-table>
     </pagination>
   </div>
 </template>
@@ -15,7 +15,15 @@
     components: {Pagination, ListTable},
     data() {
       return {
-        tableKeys: ['id', 'title', 'created_at']
+        tableKeys: [
+          {key: 'id', title: 'Id'},
+          {key: 'title', title: 'Title'},
+          {key: 'created_at', title: 'Creation date'}
+        ],
+        actions: [
+          {title: 'Edit', color: 'is-primary'},
+          {title: 'Delete', color: 'is-danger'}
+        ]
       }
     },
     created() {
