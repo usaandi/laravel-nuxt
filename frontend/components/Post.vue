@@ -1,16 +1,20 @@
 <template>
   <article class="media">
     <div class="media-left">
-      <img :src="'https://picsum.photos/100?blur&random&id='+post.id" width="100" height="100">
+      <figure v-if="post.images">
+        <img :src="post.images[0].src" width="100" height="100">
+      </figure>
     </div>
     <div class="media-content">
       <div class="content">
         <div>
           <strong class="card-title">{{post.title}}</strong>
         </div>
-          <p class="card-body">
-            {{post.content}}
-          </p>
+        <p class="card-body">
+          {{post.content}}
+        </p>
+        <time :datetime="$moment(post.created_at).format()">{{$moment(post.created_at).fromNow()}}</time>
+
       </div>
       <nav class="level is-mobile">
         <div class="level-left">

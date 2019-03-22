@@ -11,9 +11,13 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-       // $this->call(userPostsTableSeeder::class);
-        factory(App\User::class, 50)->create()->each(function ($u) {
+        $this->call([
+            UserSeeder::class,
+            PostSeeder::class,
+            ImageSeeder::class,
+        ]);
+      /*  factory(App\User::class, 50)->create()->each(function ($u) {
             factory(App\Post::class, 20)->create(['user_id' => $u->id]);
-        });
+        });*/
     }
 }

@@ -1,13 +1,14 @@
 <template>
-    <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
-      <div id="navbarBasicExample" class="navbar-menu">
-        <div class="navbar-start">
-          <a class="navbar-item" v-for="(link,index) in links" :key="index" :href="link.link" :class="{'is-active':routeActive(link.link)}">
-            {{link.title}}
-          </a>
-        </div>
+  <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+    <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-start">
+        <nuxt-link class="navbar-item" v-for="(link,index) in links" :key="index" :to="link.link"
+           :class="{'is-active':routeActive(link.link)}">
+          {{link.title}}
+        </nuxt-link>
       </div>
-    </nav>
+    </div>
+  </nav>
 </template>
 
 <script>
@@ -15,7 +16,11 @@
     name: "Menu",
     data() {
       return {
-        links: [{title: 'Posts', link: '/posts'}, {title: 'Index', link: '/'},]
+        links: [
+          {title: 'Posts', link: '/posts'},
+          {title: 'Index', link: '/'},
+          {title: 'List', link: 'posts/list'}
+        ]
       }
     },
     computed: {},

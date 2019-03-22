@@ -44,7 +44,9 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins:
-    [],
+    [
+      '@/plugins/scrollDirective',
+    ],
 
   /*
   ** Nuxt.js modules
@@ -56,6 +58,7 @@ export default {
       // Doc: https://bootstrap-vue.js.org/docs/
       'bootstrap-vue/nuxt',
       '@nuxtjs/pwa',
+      '@nuxtjs/moment'
     ],
 
   /*
