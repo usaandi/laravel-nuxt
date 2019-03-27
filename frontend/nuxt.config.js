@@ -1,4 +1,5 @@
 import pkg from './package'
+import api from "./plugins/api";
 
 export default {
   mode: 'spa',
@@ -46,6 +47,7 @@ export default {
   plugins:
     [
       '@/plugins/scrollDirective',
+      '@/plugins/api',
     ],
 
   /*
