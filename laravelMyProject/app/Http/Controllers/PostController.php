@@ -72,6 +72,7 @@ class PostController extends Controller
     {
         $post->fill($request->all());
         $post->save();
+        return $post;
     }
 
     /**
@@ -82,6 +83,6 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-        //
+        $post->delete();
     }
 }

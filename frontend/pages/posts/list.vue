@@ -35,8 +35,10 @@
       loadPage(page) {
         this.$store.dispatch('loadPostPage', page);
       },
-      edit() {
+      edit(id) {
         this.$store.dispatch('toggleModal','edit');
+        this.$store.dispatch('setModalData', {id:id, modal:'edit'});
+
       }
     },
     computed: {

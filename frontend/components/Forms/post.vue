@@ -3,7 +3,7 @@
     <div class="field">
       <label class="label">Title</label>
       <div class="control">
-        <input class="input" :value="title"   type="text" placeholder="Title">
+        <input class="input" v-model="title"   type="text" placeholder="Title">
       </div>
     </div>
     <div class="field">
@@ -23,8 +23,8 @@
         get() {
           return this.$store.state.modal.edit.data.title
         },
-        set(val) {
-          this.$store.dispatch('setFormData', {key: 'Title', value: val, modal: 'edit'})
+        set(newValue) {
+          this.$store.dispatch('setFormData', {key: 'title', value: newValue, modal: 'edit'})
         }
       },
       content: {
