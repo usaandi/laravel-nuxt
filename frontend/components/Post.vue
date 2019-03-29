@@ -13,7 +13,7 @@
         <p class="card-body">
           {{post.content}}
         </p>
-        <time :datetime="$moment(post.created_at).format()">{{$moment(post.created_at).fromNow()}}</time>
+        <time :datetime="$moment(post.created_at).format()">last updated: {{$moment(post.updated_at).fromNow()}}</time>
 
       </div>
       <nav class="level is-mobile">
