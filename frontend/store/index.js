@@ -85,12 +85,18 @@ export const actions = {
   },
   savePost(context) {
     let edit = context.state.modal.edit;
-    this.$api.posts.put(edit.id, edit.data).then(response => {
+    this.$api.posts.post(edit.id, edit.data).then(response => {
       context.commit('TOGGLE_MODAL', 'edit');
       let index = context.state.list.findIndex(el => el.id === response.id);
       context.commit('SET_POST', {data: response, index: index});
     })
   },
+  deletePost(context, id) {
+    this.$api.posts.remove(id).then(response => {
+      let index = context.state.list.findIndex(el => el.id === id);
+      context.dispatch('loadPostPage', context.state.pagination.current_page);
+    })
+  }
 
 };
 export const getters = {};

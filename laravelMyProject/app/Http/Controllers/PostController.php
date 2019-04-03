@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Post;
 use Illuminate\Http\Request;
+use Exception;
 
 class PostController extends Controller
 {
@@ -83,6 +84,10 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-        $post->delete();
+        try {
+            $post->delete();
+        } catch (Exception $e) {
+            var_dump($e);
+        }
     }
 }

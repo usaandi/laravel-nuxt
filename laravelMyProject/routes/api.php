@@ -16,10 +16,10 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+Route::post('posts/{post}', 'PostController@update');
+Route::delete('posts/{post}', 'PostController@destroy');
 
 Route::get('posts', 'PostController@index');
-Route::put('posts/{post}', 'PostController@update');
-Route::delete('posts/{post}', 'PostController@destroy');
 
 
 Route::post('/register', 'AuthController@register');

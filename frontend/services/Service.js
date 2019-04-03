@@ -44,4 +44,8 @@ export default class service {
     return this.api.$delete(...arguments);
   }
 
+  remove(id) {
+    return this.delete(id);
+  }
+
 }

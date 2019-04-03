@@ -1,7 +1,8 @@
 <template>
   <div class="container mt-4">
     <pagination :pagination="$store.state.pagination" @paging="loadPage" :delta="1">
-      <list-table @edit="edit" :objects="$store.state.list" :keys="tableKeys" :actions="actions"></list-table>
+      <list-table @edit="edit" @delete="remove" :objects="$store.state.list" :keys="tableKeys"
+                  :actions="actions"></list-table>
     </pagination>
     <awesome-modal v-if="modalActive" :modal="editModal"></awesome-modal>
   </div>
@@ -36,16 +37,19 @@
         this.$store.dispatch('loadPostPage', page);
       },
       edit(id) {
-        this.$store.dispatch('toggleModal','edit');
-        this.$store.dispatch('setModalData', {id:id, modal:'edit'});
+        this.$store.dispatch('toggleModal', 'edit');
+        this.$store.dispatch('setModalData', {id: id, modal: 'edit'});
 
+      },
+      remove(id) {
+        this.$store.dispatch('deletePost', id);
       }
     },
     computed: {
       modalActive() {
-       return this.$store.state.modal.edit.active;
+        return this.$store.state.modal.edit.active;
       },
-      editModal(){
+      editModal() {
         return this.$store.state.modal.edit;
       }
     }
