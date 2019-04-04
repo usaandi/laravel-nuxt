@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eb210375-c39a-4df7-8b8e-0ecb78665797" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Post.php" afterDir="false" />
-    </list>
+    <list default="true" id="eb210375-c39a-4df7-8b8e-0ecb78665797" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -419,16 +417,15 @@
       <workItem from="1553235560569" duration="5559000" />
       <workItem from="1553761409746" duration="3109000" />
       <workItem from="1553839990200" duration="2982000" />
-      <workItem from="1554269905013" duration="3459000" />
+      <workItem from="1554269905013" duration="3505000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22469000" />
+    <option name="totallyTimeSpent" value="22515000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="361" y="168" width="1446" height="1047" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25468975" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
